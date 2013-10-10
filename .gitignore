@@ -1,3 +1,4 @@
 # ignore eclipse related resources
 .settings
+.project
 .classpath
