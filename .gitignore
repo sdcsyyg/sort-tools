@@ -1,6 +1,5 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
+# ignore eclipse related resources
+.settings
+.target
+.classpath
+WebContent/WEB-INF/lib
