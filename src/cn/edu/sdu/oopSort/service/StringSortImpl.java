@@ -1,12 +1,14 @@
 package cn.edu.sdu.oopSort.service;
 
+import cn.edu.sdu.oopSort.core.SortToolsSupport;
+
 /**
  * 
  * @author Yonggang Yuan
  *
  */
 
-public class StringSortImpl implements StringSort {
+public class StringSortImpl extends SortToolsSupport<String> implements  StringSort {
 
     /* The singleton instance */
     private static StringSortImpl sortTool4String = new StringSortImpl();
@@ -15,24 +17,6 @@ public class StringSortImpl implements StringSort {
 
     public static StringSortImpl getInstance() {
         return sortTool4String;
-    }
-
-    @Override
-    public String[] bubbleDESC(String[] source) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[] quickDESC(String[] source) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String[] insertDESC(String[] source) {
-        // TODO Auto-generated method stub
-        return null;
     }
 
 }

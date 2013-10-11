@@ -1,6 +1,7 @@
 package cn.edu.sdu.oopSort.service;
 
 import cn.edu.sdu.oopSort.bean.Person;
+import cn.edu.sdu.oopSort.exception.TargetArrayIsNullException;
 
 /**
  * 
@@ -20,40 +21,31 @@ public class PersonSortImpl implements PersonSort {
     }
 
     @Override
-    public Person[] bubbleDESC(Person[] source) {
-        // TODO Auto-generated method stub
-        return null;
+    public Person[] bubbleDESC(Person[] source) throws TargetArrayIsNullException {
+        if(source==null || source.length<1) {
+            throw new TargetArrayIsNullException(" -- Tartget array can not be null or empty! --");
+        }
+        for(int i=0; i<source.length-1; i++) {
+            for(int j=i+1; j<source.length; j++) {
+                if(source[j].older(source[i])) {
+                    Person tmp = source[i];
+                    source[i] = source[j];
+                    source[j] = tmp;
+                }
+            }
+        }
+        return source;
     }
 
     @Override
-    public Person[] quickDESC(Person[] source) {
-        // TODO Auto-generated method stub
-        return null;
+    public Person[] quickDESC(Person[] source) throws TargetArrayIsNullException {
+        // TODO 在此处实现快排
+        return source;
     }
 
     @Override
-    public Person[] insertDESC(Person[] source) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-    
-    /** Sorting by height that is a to do thing **/
-    
-    @Override
-    public Person[] bubbleByHeight(Person[] source) {
-        // TODO Bubble sort by person's height
-        return null;
-    }
-
-    @Override
-    public Person[] quickByHeight(Person[] source) {
-        // TODO quick sort by person's height
-        return null;
-    }
-
-    @Override
-    public Person[] insertByHeight(Person[] source) {
-        // TODO insert sort by person's height
+    public Person[] insertDESC(Person[] source) throws TargetArrayIsNullException {
+        // TODO 在此处实现插排
         return null;
     }
 

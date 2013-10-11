@@ -10,6 +10,4 @@ import cn.edu.sdu.oopSort.core.SortTools;
 
 public interface StringSort extends SortTools<String> {
 
-    
-
 }
