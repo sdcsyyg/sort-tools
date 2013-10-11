@@ -43,12 +43,12 @@ public class SortToolsFactory {
         return StringSortImpl.getInstance();
     }
 
-    /* Get a person-sort-tool as a nor-primitive type sortTool */
+    /* 得到对Person进行排序的sortTool */
     public static PersonSort getInstance4Person() {
         return PersonSortImpl.getInstance();
     }
 
-    /* Get a normal instance to sort all kinds of objects */
+    /* 得到通用的sortTool，适应于Object */
     public static SortToolsSupport<Object> getInstance4Normal() {
         return new SortToolsSupport<Object>() {
             // TODO: A simple implementation or nothing.

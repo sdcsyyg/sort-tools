@@ -1,5 +1,7 @@
 package cn.edu.sdu.oopSort.core;
 
+import cn.edu.sdu.oopSort.exception.TargetArrayIsNullException;
+
 /**
  * 
  * @author Yonggang Yuan
@@ -9,15 +11,15 @@ package cn.edu.sdu.oopSort.core;
 public interface SortTools<T> {
 
     /* Bubble sort definition */
-    public T[] bubbleDESC(T[] source);
+    public T[] bubbleDESC(T[] source) throws TargetArrayIsNullException;
 
     /* Quick sort definition */
-    public T[] quickDESC(T[] source);
+    public T[] quickDESC(T[] source) throws TargetArrayIsNullException;
 
     /* Insert sort definition */
-    public T[] insertDESC(T[] source);
+    public T[] insertDESC(T[] source) throws TargetArrayIsNullException;
 
     /* ------------------------------------------------------------------------ */
-    // TODO: We can define sort methods here for asc or some other greater design.
+    // TODO: 作为拓展设计：我们可以着这里定义进行ASC的排序。
     /* ------------------------------------------------------------------------ */
 }

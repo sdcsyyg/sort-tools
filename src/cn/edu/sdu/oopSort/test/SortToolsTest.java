@@ -1,6 +1,7 @@
 package cn.edu.sdu.oopSort.test;
 
 import cn.edu.sdu.oopSort.bean.Person;
+import cn.edu.sdu.oopSort.exception.TargetArrayIsNullException;
 import cn.edu.sdu.oopSort.factory.SortToolsFactory;
 import cn.edu.sdu.oopSort.service.PersonSort;
 import cn.edu.sdu.oopSort.service.PrimitiveSort;
@@ -45,6 +46,9 @@ public class SortToolsTest {
         PrimitiveSort<Integer> sortTool4Integer = SortToolsFactory.getInstance4Integer();
         PrimitiveSort<Double> sortTool4Double = SortToolsFactory.getInstance4Double();
 
+        System.out.println("\n############################################################");
+        System.out.println("-----------------------Test sort for primitive------------------");
+        System.out.println("############################################################");
         System.out.println("-----------------------Test sort for Integer---------------------------");
         System.out.println("-----------------------Integer array before sorting---------------------------");
         for(int foo : foos4int) {
@@ -53,7 +57,13 @@ public class SortToolsTest {
         System.out.println();
 
         System.out.println("-----------------------Integer array after sorting------------------");
-        for(int foo : sortTool4Integer.bubbleDESC(foos4int)) {
+        Integer[] res4int = {};
+        try {
+            res4int = sortTool4Integer.bubbleDESC(foos4int);
+        } catch (TargetArrayIsNullException e) {
+            e.printStackTrace();
+        }
+        for(int foo : res4int) {
             System.out.print(foo + "  |  ");
         }
         System.out.println();
@@ -66,12 +76,16 @@ public class SortToolsTest {
         System.out.println();
 
         System.out.println("-----------------------Double array after sorting------------------");
-        for(double foo : sortTool4Double.bubbleDESC(foos4double)) {
+        Double[] res4Double = {};
+        try {
+            res4Double = sortTool4Double.bubbleDESC(foos4double);
+        } catch (TargetArrayIsNullException e) {
+            e.printStackTrace();
+        }
+        for(double foo : res4Double) {
             System.out.print(foo + "  |  ");
         }
         System.out.println();
-        System.out.println("#################################################");
-        System.out.println("#################################################");
     }
 
     /**
@@ -80,19 +94,25 @@ public class SortToolsTest {
     private static void stringSortToolTest() {
         String [] foos4String = {"aa", "ff", "ad", "gf", "rgh", "yyg", "rtp", "ewq", "loip", "ppp"};
         StringSort sortTool4String = SortToolsFactory.getInstance4String();
+        System.out.println("\n############################################################");
         System.out.println("-----------------------Test sort for String------------------");
+        System.out.println("############################################################");
         System.out.println("-----------------------String array before sorting------------------");
         for(String foo : foos4String) {
             System.out.print(foo + "  |  ");
         }
         System.out.println();
         System.out.println("-----------------------String array after sorting------------------");
-        for(String foo : sortTool4String.bubbleDESC(foos4String)) {
+        String[] res4String = {};
+        try {
+            res4String = sortTool4String.bubbleDESC(foos4String);
+        } catch (TargetArrayIsNullException e) {
+            e.printStackTrace();
+        }
+        for(String foo : res4String) {
             System.out.print(foo + "  |  ");
         }
         System.out.println();
-        System.out.println("#################################################");
-        System.out.println("#################################################");
     }
 
     /**
@@ -112,14 +132,22 @@ public class SortToolsTest {
             new Person("jj", 11, 155.0)
         };
         PersonSort sortTool4Person = SortToolsFactory.getInstance4Person();
+        System.out.println("\n############################################################");
         System.out.println("-----------------------Test sort for Person------------------");
+        System.out.println("############################################################");
         System.out.println("-----------------------Person array before sorting------------------");
-        System.out.println("Name\tAge\tHeight");
+        System.out.println("Name\t|\tAge\t|\tHeight");
         for(Person foo : foos4Person) {
             System.out.println(foo);
         }
         System.out.println("-----------------------Person array after sorting------------------");
-        for(Person foo : sortTool4Person.bubbleDESC(foos4Person)) {
+        Person[] res4Person = {};
+        try {
+            res4Person = sortTool4Person.bubbleDESC(foos4Person);
+        } catch (TargetArrayIsNullException e) {
+            e.printStackTrace();
+        }
+        for(Person foo : res4Person) {
             System.out.println(foo);
         }
     }
