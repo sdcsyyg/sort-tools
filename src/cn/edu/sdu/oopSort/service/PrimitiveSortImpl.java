@@ -7,6 +7,7 @@ import cn.edu.sdu.oopSort.core.SortToolsSupport;
  * @author Yonggang Yuan
  *
  * @param <T> : Any primitive type such as int, double except String and boolean.
+ * 
  */
 
 public class PrimitiveSortImpl<T> extends SortToolsSupport<T> implements PrimitiveSort<T>{

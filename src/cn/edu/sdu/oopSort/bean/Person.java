@@ -63,6 +63,17 @@ public class Person implements Serializable {
         this.height = height;
     }
 
+    /** Methods **/
+
+    /**
+     * To judge if this is older than given person
+     * @param person : Given person.
+     * @return : Return true if this is older than given person.
+     */
+    public boolean older(Person person) {
+        return this.age > person.age;
+    }
+
     /** Override hashCode and equals using name **/
 
     @Override
@@ -87,7 +98,7 @@ public class Person implements Serializable {
 
     @Override
     public String toString() {
-        return this.name + "\t" + this.age + "\t" + this.height;
+        return this.name + "\t|\t" + this.age + "\t|\t" + this.height;
     }
 
 }
