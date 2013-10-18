@@ -3,7 +3,7 @@ package cn.edu.sdu.oopSort.bean;
 import java.io.Serializable;
 
 /**
- * 
+ * bgajf;wjg
  * @author Yonggang Yuan
  *xbgfd
  */
