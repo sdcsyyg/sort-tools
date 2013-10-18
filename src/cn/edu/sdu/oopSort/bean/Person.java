@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 
  * @author Yonggang Yuan
- *
+ *xbgfd
  */
 
 public class Person implements Serializable {
